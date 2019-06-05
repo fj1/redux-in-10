@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import * as nameActions from "./redux/nameActions.js";
-import './name.css';
+import "./name.css";
 
 class NameComponent extends Component {
   static propTypes = {
@@ -14,9 +14,9 @@ class NameComponent extends Component {
     const { name, updateName } = this.props;
 
     return (
-      <div className='name-component'>
+      <div className="name-component">
         <h1>What's your name?</h1>
-        <input type="text" onChange={updateName} />
+        <input type="text" onChange={updateName} value={name} />
         {name && <h2>{`Hello ${name}! 👋🏻`}</h2>}
       </div>
     );
@@ -24,12 +24,18 @@ class NameComponent extends Component {
 }
 
 const mapStateToProps = state => {
-  const { nameState: {name} } = state;
+  const {
+    nameState: { name }
+  } = state;
 
   return { name };
 };
 
-const mapDispatchToProps = { ...nameActions };
+const mapDispatchToProps = dispatch => {
+  return {
+    updateName: event => dispatch(nameActions.updateName(event))
+  };
+};
 
 export default connect(
   mapStateToProps,

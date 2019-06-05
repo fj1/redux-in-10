@@ -1,23 +1,23 @@
-import {UPDATE_NAME} from './nameActionTypes';
+import { UPDATE_NAME } from "./nameActionTypes";
 
 const defaultState = {
-  name: ''
-}
+  name: ""
+};
 
 const nameReducer = (state = defaultState, action) => {
-  const {name, type} = action;
+  const { name, type } = action;
 
-  switch(type) {
+  switch (type) {
     case UPDATE_NAME: {
       return {
         ...state,
         name
-      }
+      };
     }
 
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default nameReducer;
