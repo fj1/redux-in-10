@@ -1,4 +1,4 @@
-import { UPDATE_NAME} from './actionTypes';
+import { UPDATE_NAME} from './nameActionTypes';
 
 export const updateName = e => ({
   type: UPDATE_NAME,

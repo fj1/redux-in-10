@@ -1,10 +1,10 @@
-import {UPDATE_NAME} from './actionTypes';
+import {UPDATE_NAME} from './nameActionTypes';
 
 const defaultState = {
   name: ''
 }
 
-const reducer = (state = defaultState, action) => {
+const nameReducer = (state = defaultState, action) => {
   const {name, type} = action;
 
   switch(type) {
@@ -20,4 +20,4 @@ const reducer = (state = defaultState, action) => {
   }
 }
 
-export default reducer;
+export default nameReducer;

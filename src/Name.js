@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-import * as actions from "./redux/actions.js";
+import * as nameActions from "./redux/nameActions.js";
 import './name.css';
 
 class NameComponent extends Component {
@@ -29,7 +29,7 @@ const mapStateToProps = state => {
   return { name };
 };
 
-const mapDispatchToProps = { ...actions };
+const mapDispatchToProps = { ...nameActions };
 
 export default connect(
   mapStateToProps,
