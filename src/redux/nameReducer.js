@@ -1,7 +1,9 @@
 import { UPDATE_NAME } from "./nameActionTypes";
 
 const defaultState = {
-  name: ""
+  age: null,
+  name: "",
+  species: null,
 };
 
 const nameReducer = (state = defaultState, action) => {
